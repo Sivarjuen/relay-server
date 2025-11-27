@@ -273,8 +273,11 @@ wss.on("connection", (ws: WebSocket) => {
       case "host_event":
         handleHostEvent(client, message.payload, message.targetClientId);
         break;
-      default:
+      default: {
+        const _exhaustiveCheck: never = message;
         send(ws, { type: "error", message: "Unknown message type" });
+        return _exhaustiveCheck;
+      }
     }
   });
 

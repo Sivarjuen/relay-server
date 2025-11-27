@@ -1,7 +1,7 @@
 {
   "name": "relay-server",
   "version": "1.0.0",
-  "description": "A relay game server inteded to be used for client authoritative games",
+  "description": "A relay game server intended to be used for client authoritative games",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",

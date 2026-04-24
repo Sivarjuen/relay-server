@@ -1,2 +1,2 @@
 # relay-server
-A relay game server inteded to be used for client authoritative games
+A relay game server intended to be used for client authoritative games

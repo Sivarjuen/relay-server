@@ -2,11 +2,10 @@ import WebSocket, { WebSocketServer } from "ws";
 import {
   createConnection,
   removeConnection,
-  tickMessageCount,
 } from "./connectionManager.js";
 import { removeFromLobby, getLobbyById } from "./lobbyManager.js";
 import { handleMessage, notifyLobbyOfLeave } from "./router.js";
-import { parseMessage, isRateLimited } from "./utils/validation.js";
+import { parseMessage } from "./utils/validation.js";
 import { send } from "./utils/send.js";
 
 const PORT = parseInt(process.env.PORT ?? "8080", 10);
@@ -21,13 +20,6 @@ wss.on("connection", (socket: WebSocket) => {
   });
 
   socket.on("message", (raw: WebSocket.RawData) => {
-    // Rate limiting
-    tickMessageCount(conn);
-    if (isRateLimited(conn.messageCount, conn.rateLimitResetAt)) {
-      send(socket, { type: "error", payload: { code: "RATE_LIMITED" } });
-      return;
-    }
-
     const message = parseMessage(raw.toString());
     if (!message) {
       send(socket, { type: "error", payload: { code: "INVALID_MESSAGE" } });

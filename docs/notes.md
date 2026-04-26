@@ -540,3 +540,16 @@ No gameplay logic belongs here.
 Use in-memory state, simple lobby codes, deterministic host reassignment, and strict lobby isolation.
 
 The backend should remain stable while many different games evolve on the client side.No notes yet
+
+
+---
+
+## Processed Notes
+
+Processed on: 2026-04-26
+
+Summary:
+- Updated `project-design.md` with concept, design pillars, routing model, lobby codes, host migration, persistence strategy, scaling philosophy, and non-goals
+- Updated `tech.md` with runtime, transport, message format, state strategy, deployment options, and technical constraints
+- Updated `structure.md` with recommended file layout, module responsibilities, naming patterns, and in-memory data models
+- Updated `ai-agent-rules.md` with coding style, implementation preferences, error types, logging requirements, validation rules, and anti-patterns

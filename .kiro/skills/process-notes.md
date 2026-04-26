@@ -1,6 +1,5 @@
 ---
 name: Process Notes into Steering
-
 description: Use this skill when the user asks to process `docs/notes.md`, mobile notes, design notes, or any sort of notes into Kiro steering files. The goal is to update the project’s steering files using new notes while preserving existing important information.
 ---
 

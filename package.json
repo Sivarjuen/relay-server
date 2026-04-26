@@ -1,12 +1,13 @@
 {
   "name": "relay-server",
   "version": "1.0.0",
-  "description": "A relay game server intended to be used for client authoritative games",
-  "main": "dist/server.js",
+  "description": "A generic WebSocket relay server for client-authoritative multiplayer games",
+  "type": "module",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/server.js",
-    "dev": "tsc && node dist/server.js"
+    "start": "node dist/src/index.js",
+    "dev": "tsc && node dist/src/index.js"
   },
   "keywords": [],
   "author": "",
